@@ -13,11 +13,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         //setContentView(R.layout.activity_main);
+
         setContentView(R.layout.second2_layout);
 
         TextView textView = (TextView) findViewById(R.id.header);
 
-        textView.setText("Hello from Java");
+       //textView.setText("Hello from Java");
 
         /*ConstraintLayout constraintLayout = new ConstraintLayout(this);
         TextView textView = new TextView(this);
