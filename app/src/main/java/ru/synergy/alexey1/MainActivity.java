@@ -1,9 +1,12 @@
 package ru.synergy.alexey1;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,9 +15,42 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String LogTag = "CALCULATOR_ACTIVITY";
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(LogTag, "i am onStart");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(LogTag, "i am onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(LogTag, "i am onDestroy");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(LogTag, "i am onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(LogTag, "i am onPause");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(LogTag, "i am onCreate");
 
         setContentView(R.layout.activity_calculator);
 
@@ -23,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d(LogTag, "on button have be pushd");
                 calculateAnswer();
             }
         });
@@ -39,8 +76,12 @@ public class MainActivity extends AppCompatActivity {
 
         TextView answer = (TextView) findViewById(R.id.result);
 
+        Log.d(LogTag, "all views has been founded");
+
         float numbOne = Integer.parseInt(numOne.getText().toString());
         float numbTwo = Integer.parseInt(numTwo.getText().toString());
+
+        Log.d(LogTag, "Sucess grab data from input fields");
 
         float solution = 0;
 
