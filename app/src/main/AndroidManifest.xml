@@ -13,11 +13,7 @@
         android:theme="@style/Theme.Alexey1"
         tools:targetApi="30">
         <activity
-            android:name=".Calculator"
-            android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+            android:name=".Calculator">
         </activity>
         <activity
             android:name=".MainActivity"
